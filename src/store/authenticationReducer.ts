@@ -10,7 +10,7 @@ export const logOutFx = createAsyncThunk('auth/logout', async () => {
   localStorage.removeItem('jwtToken');
 });
 
-export const authenticateReducer = createReducer(initialState, (builder) => {
+export const authenticationReducer = createReducer(initialState, (builder) => {
   builder.addCase(logInFx.fulfilled, () => true);
   builder.addCase(logOutFx.fulfilled, () => false);
 });

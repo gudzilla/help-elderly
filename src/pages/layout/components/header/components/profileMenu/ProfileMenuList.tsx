@@ -3,7 +3,7 @@ import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '@/lib/redux/hooks';
-import { logOutFx } from '@/store/authenticationSlice';
+import { logOutFx } from '@/store/authenticationReducer';
 
 type ProfileMenuListProps = {
   closeMenu: () => void;

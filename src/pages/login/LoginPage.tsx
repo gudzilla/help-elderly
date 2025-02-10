@@ -7,6 +7,7 @@ const mainLayout = {
   display: 'grid',
   gridTemplateColumns: '1fr 1fr',
   height: '100%',
+  backgroundColor: '#fff',
 };
 
 const sectionStyles = {
@@ -14,7 +15,7 @@ const sectionStyles = {
   '&:not(:last-child)': { borderRight: 1, borderColor: 'divider' },
 };
 
-export const Login = () => {
+export const LoginPage = () => {
   return (
     <Box sx={mainLayout}>
       <Box component="section" sx={sectionStyles}>

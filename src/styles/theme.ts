@@ -33,6 +33,17 @@ const customTheme: ThemeOptions = {
         },
       },
     },
+    MuiFormLabel: {
+      styleOverrides: {
+        root: {
+          'color': defaultTheme.palette.text.secondary,
+          '&.Mui-focused': {
+            // Убрал изменение цвета на focus
+            color: defaultTheme.palette.text.secondary,
+          },
+        },
+      },
+    },
   },
 };
 

@@ -21,7 +21,7 @@ export const AuthForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const [authenticate, { isLoading: authIsLoading }] = useAuthenticateMutation();
+  const [authenticate, { isLoading: authIsLoading, error }] = useAuthenticateMutation();
 
   const {
     control,

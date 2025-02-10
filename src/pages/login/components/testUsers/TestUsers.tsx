@@ -21,7 +21,7 @@ const testUsersBoxStyle = {
   // Height to fit exactly 3 alerts
   // if you have more you need to scroll
   maxHeight: '400px',
-  overflowY: 'scroll',
+  overflowY: 'auto',
 };
 
 export const TestUsers = () => {

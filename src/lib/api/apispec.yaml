@@ -17,10 +17,10 @@ paths:
               properties:
                 login:
                   type: string
-                  example: "user@example.com"
+                  example: 'user@example.com'
                 password:
                   type: string
-                  example: "password123"
+                  example: 'password123'
       responses:
         '200':
           description: Успешный вход и генерация токена
@@ -34,7 +34,7 @@ paths:
                     example: true
                   token:
                     type: string
-                    example: "jwt-token"
+                    example: 'jwt-token'
         '400':
           description: Неверный логин или пароль
         '500':
@@ -54,7 +54,7 @@ paths:
                 type: array
                 items:
                   type: string
-                  example: "request-id-1"
+                  example: 'request-id-1'
         '401':
           description: Неавторизован
         '500':
@@ -73,7 +73,7 @@ paths:
               properties:
                 requestId:
                   type: string
-                  example: "request-id-1"
+                  example: 'request-id-1'
       responses:
         '200':
           description: Запрос успешно добавлен в избранное
@@ -81,7 +81,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "Запрос успешно добавлен в избранное."
+                example: 'Запрос успешно добавлен в избранное.'
         '400':
           description: Ошибка при добавлении в избранное
         '500':
@@ -98,7 +98,7 @@ paths:
           required: true
           schema:
             type: string
-            example: "request-id-1"
+            example: 'request-id-1'
       responses:
         '200':
           description: Запрос успешно удален из избранного
@@ -106,7 +106,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "Запрос успешно удален из избранного."
+                example: 'Запрос успешно удален из избранного.'
         '400':
           description: Ошибка при удалении из избранного
         '500':
@@ -138,7 +138,7 @@ paths:
           required: true
           schema:
             type: string
-            example: "request-id-1"
+            example: 'request-id-1'
       responses:
         '200':
           description: Вклад успешно внесен
@@ -146,7 +146,7 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: "Вклад успешно внесен."
+                example: 'Вклад успешно внесен.'
         '404':
           description: Запрос не найден
         '500':
@@ -161,7 +161,7 @@ paths:
           required: true
           schema:
             type: string
-            example: "request-id-1"
+            example: 'request-id-1'
       responses:
         '200':
           description: Детали запроса на помощь
@@ -198,128 +198,30 @@ components:
       scheme: bearer
       bearerFormat: JWT
 
-  schemas:
-    UserData:
-      type: object
-      properties:
-        id:
-          type: string
-          example: "user-id-1"
-        name:
-          type: string
-          example: "Александр"
-        lastName:
-          type: string
-          example: "Иванов"
-        birthdate:
-          type: string
-          format: date
-          example: "1950-07-23"
-        status:
-          type: string
-          enum: ["Начинающий", "Опытный"]
-        baseLocations:
-          type: array
-          items:
-            type: object
-            properties:
-              latitude:
-                type: number
-                example: 40.712776
-              longitude:
-                type: number
-                example: -74.005974
-              district:
-                type: string
-                example: "Центральный"
-              city:
-                type: string
-                example: "Москва"
-        educations:
-          type: array
-          items:
-            type: object
-            properties:
-              organizationName:
-                type: string
-                example: "МГУ"
-              level:
-                type: string
-                enum: ["Среднее общее", "Среднее профессиональное", "Высшее"]
-              specialization:
-                type: string
-                example: "Филология"
-              graduationYear:
-                type: integer
-                example: 1980
-        additionalInfo:
-          type: string
-          example: "Дополнительная информация о пользователе."
-        contacts:
-          type: object
-          properties:
-            email:
-              type: string
-              format: email
-              example: "user@example.com"
-            phone:
-              type: string
-              example: "+123456789"
-            social:
-              type: object
-              properties:
-                telegram:
-                  type: string
-                  example: "@user"
-                whatsapp:
-                  type: string
-                  example: "+123456789"
-                vk:
-                  type: string
-                  example: "user_vk_id"
-        favouriteRequests:
-          type: array
-          items:
-            type: string
-
-    HelpRequestData:
-      type: object
-      properties:
-        id:
-          type: string
-          example: "request-id-1"
-        title:
-          type: string
-          example: "Помощь в проекте"
-        organization:
-          type: object
-          properties:
-            title:
-              type: string
-              example: "Благотворительная организация"
-            isVerified:
-              type: boolean
-        description:
-          type: string
-          example: "Описание запроса на помощь."
-        goalDescription:
-          type: string
-          example: "Цель данного запроса."
-        actionsSchedule:
-          type: array
-          items:
-            type: object
-            properties:
-              stepLabel:
-                type: string
-                example: "Шаг 1"
-              isDone:
-                type: boolean
-        endingDate:
-          type: string
-          format: date
-          example: "2023-12-31"
-        location:
+# ---------------------------------- OLD -------------------------------------
+schemas:
+  UserData:
+    type: object
+    properties:
+      id:
+        type: string
+        example: 'user-id-1'
+      name:
+        type: string
+        example: 'Александр'
+      lastName:
+        type: string
+        example: 'Иванов'
+      birthdate:
+        type: string
+        format: date
+        example: '1950-07-23'
+      status:
+        type: string
+        enum: ['Начинающий', 'Опытный']
+      baseLocations:
+        type: array
+        items:
           type: object
           properties:
             latitude:
@@ -330,47 +232,231 @@ components:
               example: -74.005974
             district:
               type: string
-              example: "Пресненский"
+              example: 'Центральный'
             city:
               type: string
-              example: "Москва"
-        contacts:
+              example: 'Москва'
+      educations:
+        type: array
+        items:
           type: object
           properties:
-            email:
+            organizationName:
               type: string
-              format: email
-              example: "contact@example.com"
-            phone:
+              example: 'МГУ'
+            level:
               type: string
-              example: "+123456789"
-            website:
+              enum: ['Среднее общее', 'Среднее профессиональное', 'Высшее']
+            specialization:
               type: string
-              example: "https://example.com"
-        requesterType:
+              example: 'Филология'
+            graduationYear:
+              type: integer
+              example: 1980
+      additionalInfo:
+        type: string
+        example: 'Дополнительная информация о пользователе.'
+      contacts:
+        type: object
+        properties:
+          email:
+            type: string
+            format: email
+            example: 'user@example.com'
+          phone:
+            type: string
+            example: '+123456789'
+          social:
+            type: object
+            properties:
+              telegram:
+                type: string
+                example: '@user'
+              whatsapp:
+                type: string
+                example: '+123456789'
+              vk:
+                type: string
+                example: 'user_vk_id'
+      favouriteRequests:
+        type: array
+        items:
           type: string
-          enum: ["person", "organization"]
-        helpType:
-          type: string
-          enum: ["finance", "material"]
-        helperRequirements:
-          type: object
-          properties:
-            helperType:
-              type: string
-              enum: ["group", "single"]
-            isOnline:
-              type: boolean
-            qualification:
-              type: string
-              enum: ["professional", "common"]
-        contributorsCount:
-          type: integer
-          example: 10
-        requestGoal:
-          type: integer
-          example: 10000
-        requestGoalCurrentValue:
-          type: integer
-          example: 2500
 
+  HelpRequestData:
+    type: object
+    properties:
+      id:
+        type: string
+        example: 'request-id-1'
+      title:
+        type: string
+        example: 'Помощь в проекте'
+      organization:
+        type: object
+        properties:
+          title:
+            type: string
+            example: 'Благотворительная организация'
+          isVerified:
+            type: boolean
+      description:
+        type: string
+        example: 'Описание запроса на помощь.'
+      goalDescription:
+        type: string
+        example: 'Цель данного запроса.'
+      actionsSchedule:
+        type: array
+        items:
+          type: object
+          properties:
+            stepLabel:
+              type: string
+              example: 'Шаг 1'
+            isDone:
+              type: boolean
+      endingDate:
+        type: string
+        format: date
+        example: '2023-12-31'
+      location:
+        type: object
+        properties:
+          latitude:
+            type: number
+            example: 40.712776
+          longitude:
+            type: number
+            example: -74.005974
+          district:
+            type: string
+            example: 'Пресненский'
+          city:
+            type: string
+            example: 'Москва'
+      contacts:
+        type: object
+        properties:
+          email:
+            type: string
+            format: email
+            example: 'contact@example.com'
+          phone:
+            type: string
+            example: '+123456789'
+          website:
+            type: string
+            example: 'https://example.com'
+      requesterType:
+        type: string
+        enum: ['person', 'organization']
+      helpType:
+        type: string
+        enum: ['finance', 'material']
+      helperRequirements:
+        type: object
+        properties:
+          helperType:
+            type: string
+            enum: ['group', 'single']
+          isOnline:
+            type: boolean
+          qualification:
+            type: string
+            enum: ['professional', 'common']
+      contributorsCount:
+        type: integer
+        example: 10
+      requestGoal:
+        type: integer
+        example: 10000
+      requestGoalCurrentValue:
+        type: integer
+        example: 2500
+# ---------------------------------- NEW [required]-------------------------------------
+# ----------------------- Failed to create types from schemas with swagger
+
+# schemas:
+#   UserData:
+#     type: object
+#     required: [id, name, lastName, birthdate, status, baseLocations, educations, contacts]
+#     properties:
+#       id:
+#         type: string
+#         example: 'user-id-1'
+#       name:
+#         type: string
+#         example: 'Александр'
+#       lastName:
+#         type: string
+#         example: 'Иванов'
+#       birthdate:
+#         type: string
+#         format: date
+#         example: '1950-07-23'
+#       status:
+#         type: string
+#         enum: ['Начинающий', 'Опытный']
+#       baseLocations:
+#         type: array
+#         items:
+#           type: object
+#           required: [latitude, longitude, district, city]
+#           properties:
+#             latitude:
+#               type: number
+#               example: 40.712776
+#             longitude:
+#               type: number
+#               example: -74.005974
+#             district:
+#               type: string
+#               example: 'Центральный'
+#             city:
+#               type: string
+#               example: 'Москва'
+#       educations:
+#         type: array
+#         items:
+#           type: object
+#           required: [organizationName, level, specialization, graduationYear]
+#           properties:
+#             organizationName:
+#               type: string
+#               example: 'МГУ'
+#             level:
+#               type: string
+#               enum: ['Среднее общее', 'Среднее профессиональное', 'Высшее']
+#             specialization:
+#               type: string
+#               example: 'Филология'
+#             graduationYear:
+#               type: integer
+#               example: 1980
+#       additionalInfo:
+#         type: string
+#         example: 'Дополнительная информация о пользователе.'
+#       contacts:
+#         type: object
+#         required: [email, phone]
+#         properties:
+#           email:
+#             type: string
+#             format: email
+#             example: 'user@example.com'
+#           phone:
+#             type: string
+#             example: '+123456789'
+#           social:
+#             type: object
+#             properties:
+#               telegram:
+#                 type: string
+#                 example: '@user'
+#               whatsapp:
+#                 type: string
+#                 example: '+123456789'
+#               vk:
+#                 type: string
+#                 example: 'user_vk_id'
